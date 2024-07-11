@@ -2,9 +2,12 @@ package com.ecommerce.e_commerce.controller;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.*;
 
 import com.ecommerce.e_commerce.model.Product;
@@ -17,9 +20,13 @@ public class ProductController {
 
     @Autowired
     public ProductController(ProductService productService){
+
+    @Autowired
+    public ProductController(ProductService productService){
         this.productService = productService;
     }
 
+    @GetMapping("/all")
     @GetMapping("/all")
     public ResponseEntity<List<Product>> getProducts(){
         return ResponseEntity.ok(productService.getProducts());
