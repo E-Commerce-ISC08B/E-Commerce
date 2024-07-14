@@ -20,6 +20,8 @@ public class ProductController {
 
     @Autowired
     public ProductController(ProductService productService){
+        
+    }
 
     @Autowired
     public ProductController(ProductService productService){
@@ -59,8 +61,8 @@ public class ProductController {
         Optional<Product> existingProduct = productService.getProduct(id);
         if (existingProduct.isPresent()) {
             Product productToUpdate = existingProduct.get();
-            productToUpdate.setName(productDetails.getName());
-            productToUpdate.setPrice(productDetails.getPrice());
+            //productToUpdate.setName(productDetails.getName());
+            //productToUpdate.setPrice(productDetails.getPrice());
             productToUpdate.setDescription(productDetails.getDescription());
             productService.saveProduct(productToUpdate);
             return ResponseEntity.ok(productToUpdate);
