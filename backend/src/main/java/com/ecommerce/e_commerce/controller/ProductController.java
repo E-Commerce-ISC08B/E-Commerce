@@ -14,7 +14,7 @@ import com.ecommerce.e_commerce.model.Product;
 import com.ecommerce.e_commerce.service.ProductService;
 
 @RestController
-@RequestMapping("/api/products")
+@RequestMapping("/products") //lo que borre fue: /api/products
 public class ProductController {
     private final ProductService productService;
 
