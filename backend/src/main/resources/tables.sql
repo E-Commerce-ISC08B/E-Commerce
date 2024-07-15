@@ -11,7 +11,7 @@ CREATE Table `Categories` (
 CREATE Table `Products` (
   `productID` integer not null AUTO_INCREMENT,
   `productName` varchar (30),
-  `productPrice` integer,
+  `productPrice` float,
   `productQTY` smallint (6),
   `description`  varchar (30),
   PRIMARY KEY (`productID`)
@@ -52,7 +52,7 @@ CREATE Table `product_category` (
 CREATE Table `order_details` (
   `orderID` integer not null,
   `productID` integer not null,
-  `productPrice` integer,
+  `productPrice` float,
   `quantity` integer,
   PRIMARY KEY (orderID, productID),
   CONSTRAINT OrdDet_ord FOREIGN KEY (orderID) REFERENCES Orders (orderID) ON DELETE CASCADE ON UPDATE CASCADE,

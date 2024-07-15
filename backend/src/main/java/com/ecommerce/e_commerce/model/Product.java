@@ -6,7 +6,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.persistence.Transient;
 import lombok.Data;
 
 @Data
@@ -18,15 +17,11 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int productID;
 
-    @Transient
     private String productName;
 
-    @Transient
     private float productPrice;
 
-    @Transient
     private int productQTY;
 
-    @Transient
     private String description;
 }
