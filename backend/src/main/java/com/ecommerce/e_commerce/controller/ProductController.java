@@ -1,6 +1,7 @@
 package com.ecommerce.e_commerce.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import com.ecommerce.e_commerce.model.Product;
 import com.ecommerce.e_commerce.service.ProductService;
@@ -15,6 +17,8 @@ import com.ecommerce.e_commerce.service.ProductService;
 import jakarta.validation.Valid;
 
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @Controller
 public class ProductController {
@@ -45,4 +49,19 @@ public class ProductController {
     public ResponseEntity<List<Product>> Read() {
         return ResponseEntity.ok(productService.getProducts());
     }
+
+    @GetMapping("/eliminar/{id}")  // Eliminar Boton
+    public String deleteProduct(@PathVariable Long id ) {
+        if (id > 0 ) {
+            productService.deleteProduct(id);
+        }
+        return "redirect:/listado";   // equivalente a  @GetMapping ("/listado")
+    } 
+
+    @GetMapping("/update/{id}"){
+    public ResponseEntity<Optional<Product>> updateProduct(@PathVariable Long id)
+        return ResponseEntity.ok(productService.getProduct(id));
+    }
+    
+
 }
