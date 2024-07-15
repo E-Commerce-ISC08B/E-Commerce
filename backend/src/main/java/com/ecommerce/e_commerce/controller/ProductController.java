@@ -55,11 +55,11 @@ public class ProductController {
         if (id > 0 ) {
             productService.deleteProduct(id);
         }
-        return "redirect:/listado";   // equivalente a  @GetMapping ("/listado")
+        return "redirect:/";   // equivalente a  @GetMapping ("/listado")
     } 
 
-    @GetMapping("/update/{id}"){
-    public ResponseEntity<Optional<Product>> updateProduct(@PathVariable Long id)
+    @GetMapping("/update/{id}")
+    public ResponseEntity<Optional<Product>> updateProduct(@PathVariable Long id){
         return ResponseEntity.ok(productService.getProduct(id));
     }
     
