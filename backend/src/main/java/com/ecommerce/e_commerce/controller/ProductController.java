@@ -1,6 +1,7 @@
 package com.ecommerce.e_commerce.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +17,8 @@ import com.ecommerce.e_commerce.service.ProductService;
 import jakarta.validation.Valid;
 
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @Controller
 public class ProductController {
@@ -48,13 +51,17 @@ public class ProductController {
     }
 
     @GetMapping("/eliminar/{id}")  // Eliminar Boton
-    public String deleteProduct(@PathVariable Long id, Model model ) {
+    public String deleteProduct(@PathVariable Long id ) {
         if (id > 0 ) {
             productService.deleteProduct(id);
         }
         return "redirect:/listado";   // equivalente a  @GetMapping ("/listado")
     } 
 
+    @GetMapping("/update/{id}"){
+    public ResponseEntity<Optional<Product>> updateProduct(@PathVariable Long id)
+        return ResponseEntity.ok(productService.getProduct(id));
+    }
     
 
 }
