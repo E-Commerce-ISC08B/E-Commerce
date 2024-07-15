@@ -1,6 +1,9 @@
 package com.ecommerce.e_commerce.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -37,4 +40,9 @@ public class ProductController {
         return "redirect:/"; // cambiar a la vista de productos
     }
 
+    // Leer productos
+    @GetMapping({ "/allproducts" })
+    public ResponseEntity<List<Product>> Read() {
+        return ResponseEntity.ok(productService.getProducts());
+    }
 }
