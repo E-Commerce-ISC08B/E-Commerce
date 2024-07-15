@@ -2,23 +2,23 @@ SET NAMES utf8;
 SET FOREIGN_KEY_CHECKS = 1;
 
 CREATE Table `Categories` (
-  `categoryID` integer not null,
+  `categoryID` integer not null AUTO_INCREMENT,
   `category` varchar (30),
   `description` varchar (30),
   PRIMARY KEY (`categoryID`)
 );
 
 CREATE Table `Products` (
-  `productID` integer not null,
+  `productID` integer not null AUTO_INCREMENT,
   `productName` varchar (30),
-  `productPrice` integer,
+  `productPrice` float,
   `productQTY` smallint (6),
   `description`  varchar (30),
   PRIMARY KEY (`productID`)
 );
 
 CREATE Table `Customers` (
-  `customerID` integer not null,
+  `customerID` integer not null AUTO_INCREMENT,
   `customerName` varchar (30),
   `email` varchar (50),
   `password`  varchar (30),
@@ -30,7 +30,7 @@ CREATE Table `Customers` (
 );
 
 CREATE Table `Orders` (
-  `orderID` integer not null,
+  `orderID` integer not null AUTO_INCREMENT,
   `ammount` integer,
   `orderAddress` varchar (50),
   `orderEmain` varchar (50),
@@ -52,7 +52,7 @@ CREATE Table `product_category` (
 CREATE Table `order_details` (
   `orderID` integer not null,
   `productID` integer not null,
-  `productPrice` integer,
+  `productPrice` float,
   `quantity` integer,
   PRIMARY KEY (orderID, productID),
   CONSTRAINT OrdDet_ord FOREIGN KEY (orderID) REFERENCES Orders (orderID) ON DELETE CASCADE ON UPDATE CASCADE,
