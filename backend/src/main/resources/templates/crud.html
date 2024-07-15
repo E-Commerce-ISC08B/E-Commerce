@@ -15,21 +15,8 @@
 
   <body>
     <div class="container">
-      <ul class="nav bg-dark">
-        <li class="nav-item"></li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Productos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contacto</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Login</a>
-        </li>
-      </ul>
-      <h1 th:text="${titulo}" class="text-success border border-primary"></h1>
 
-      <form th:action="@{/form}" th:object="${product}" method="POST">
+      <form th:action="@{/createproduct}" th:object="${product}" method="POST">
         <div class="form-group row" hidden="hidden">
           <label class="col-sm-2 col-form-label">ID</label>
           <div class="col-sm-6">
@@ -43,8 +30,7 @@
             <small
               th:if="${#fields.hasErrors('productID')}"
               th:errors="*{productID}"
-              class="form-text text-danger"
-            >
+              class="form-text text-danger">
             </small>
           </div>
         </div>
@@ -130,7 +116,7 @@
           <div class="col-sm-6">
             <input type="submit" th:value="'Enviar'" class="btn btn-success" />
             <a
-              th:href="@{/listado}"
+              th:href="@{/login}"
               type="button"
               class="btn btn-primary"
               th:text="'Volver'"

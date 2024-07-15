@@ -1,64 +1,40 @@
 package com.ecommerce.e_commerce.controller;
 
-import java.util.List;
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import com.ecommerce.e_commerce.model.Product;
 import com.ecommerce.e_commerce.service.ProductService;
 
-@RestController
-@RequestMapping("/products") //lo que borre fue: /api/products
+import jakarta.validation.Valid;
+
+import org.springframework.web.bind.annotation.PostMapping;
+
+@Controller
 public class ProductController {
     private final ProductService productService;
 
-    @Autowired
-    public ProductController(ProductService productService){
+    public ProductController(@Autowired ProductService productService) {
         this.productService = productService;
     }
 
-    @GetMapping("/all")
-    public ResponseEntity<List<Product>> getProducts(){
-        return ResponseEntity.ok(productService.getProducts());
+    // Crear productos
+    @GetMapping({ "/createproduct" })
+    public String Create(Model model) {
+        model.addAttribute("product", new Product());
+        return "crud";
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Product> getProductById(@PathVariable Long id) {
-        Optional<Product> product = productService.getProduct(id);
-        return product.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
-    }
-
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteProduct(@PathVariable Long id) {
-        if (productService.getProduct(id).isPresent()) {
-            productService.deleteProduct(id);
-            return ResponseEntity.noContent().build();
-        } else {
-            return ResponseEntity.notFound().build();
+    @PostMapping("/createproduct")
+    public String save(@Valid Product product, BindingResult br) {
+        if (br.hasErrors()) {
+            return "crud";
         }
-    }
-
-    @PostMapping
-    public ResponseEntity<Product> createProduct(@RequestBody Product product) {
         productService.saveProduct(product);
-        return ResponseEntity.ok(product);
+        return "redirect:/"; // cambiar a la vista de productos
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<Product> updateProduct(@PathVariable Long id, @RequestBody Product productDetails) {
-        Optional<Product> existingProduct = productService.getProduct(id);
-        if (existingProduct.isPresent()) {
-            Product productToUpdate = existingProduct.get();
-            productToUpdate.setProductName(productDetails.getProductName());
-            productToUpdate.setProductPrice(productDetails.getProductPrice());
-            productToUpdate.setDescription(productDetails.getDescription());
-            productService.saveProduct(productToUpdate);
-            return ResponseEntity.ok(productToUpdate);
-        } else {
-            return ResponseEntity.notFound().build();
-        }
-    }
 }
