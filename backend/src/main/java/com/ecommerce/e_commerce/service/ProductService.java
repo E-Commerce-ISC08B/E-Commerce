@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ecommerce.e_commerce.model.Product;
-import com.ecommerce.e_commerce.repository.ProductRepository;
+import com.ecommerce.e_commerce.Repository.ProductRepository;
 
 @Service
 public class ProductService {
@@ -34,4 +34,5 @@ public class ProductService {
         productRepository.save(product);
     }
     //update product
+    
 }
