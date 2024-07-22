@@ -1,3 +1,8 @@
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import NavBar from './components/NavBar';
+import Home from './components/Home';
+import Login from './components/Login'; 
+import Account from './components/Account';
 import logo from './logo.svg';
 import './App.css';
 
@@ -18,6 +23,16 @@ function App() {
           Learn React
         </a>
       </header>
+      <Router>
+        <div>
+          <NavBar />
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/login" component={Login} />
+            <Route path="/account" component={Account} />
+          </Switch>
+        </div>
+      </Router>
     </div>
   );
 }
