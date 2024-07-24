@@ -3,6 +3,7 @@ import NavBar from './components/NavBar';
 import Home from './components/Home';
 import Login from './components/Login'; 
 import Account from './components/Account';
+import CardItem from './components/CardItem';
 import logo from './logo.svg';
 import './App.css';
 
@@ -30,6 +31,7 @@ function App() {
             <Route path="/" exact component={Home} />
             <Route path="/login" component={Login} />
             <Route path="/account" component={Account} />
+            <Route path="/carditem" component={CardItem} />
           </Switch>
         </div>
       </Router>
