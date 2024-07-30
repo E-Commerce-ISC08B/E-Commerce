@@ -8,16 +8,24 @@ import CardProduct from "../CardProduct/CardProduct";
 import BasicCard from "../DescriptionProduct/descriptionProduct";
 //DescriptionOrder
 //footer
-import SignIn from "../login/Login";
+import { Login } from "../login";
 //import NavBar from "../NavBar/NavBar";
 //productdisplay
 import { ProductImages } from "../ProductImages";
 //produtName
 import HoverRating from "../productStars/productStars";
 import ProductComponent from "../productTotal/productTotal";
+import { Route, Routes } from "react-router-dom";
 
 function Main() {
-  return <ProductComponent></ProductComponent>;
+  return (
+    <Routes>
+      <Route path="/" element={<Login />} />
+      <Route path="/components" element={<HoverRating />} />
+      <Route path="/components" element={<ProductImages />} />
+      <Route path="/component2" element={<CardItem />} />
+    </Routes>
+  );
 }
 
 export default Main;
