@@ -8,7 +8,7 @@ import CardProduct from "../CardProduct/CardProduct";
 import BasicCard from "../DescriptionProduct/descriptionProduct";
 //DescriptionOrder
 //footer
-import { Login } from "../login";
+import SignIn from "../login";
 //import NavBar from "../NavBar/NavBar";
 //productdisplay
 import { ProductImages } from "../ProductImages";
@@ -20,7 +20,7 @@ import { Route, Routes } from "react-router-dom";
 function Main() {
   return (
     <Routes>
-      <Route path="/" element={<Login />} />
+      <Route path="/" element={<SignIn />} />
       <Route path="/components" element={<HoverRating />} />
       <Route path="/components" element={<ProductImages />} />
       <Route path="/component2" element={<CardItem />} />
