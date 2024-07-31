@@ -86,7 +86,7 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 }));
 
 // Componente principal de la página de inicio de sesión
-export default function SignIn() {
+export default function Login() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
