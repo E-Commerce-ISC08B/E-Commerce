@@ -3,6 +3,7 @@ package com.ecommerce.e_commerce.controller;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,13 +11,14 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import com.ecommerce.e_commerce.dto.ProductDTO;
 import com.ecommerce.e_commerce.model.Product;
 import com.ecommerce.e_commerce.service.ProductService;
 
 import jakarta.validation.Valid;
 
 import org.springframework.web.bind.annotation.PostMapping;
-
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 @Controller
 public class ProductController {
@@ -46,6 +48,12 @@ public class ProductController {
     @GetMapping({ "/allproducts" })
     public ResponseEntity<List<Product>> Read() {
         return ResponseEntity.ok(productService.getProducts());
+    }
+
+    @GetMapping({ "/todosDto" })
+    @ResponseStatus(HttpStatus.OK)
+    public List<ProductDTO> findAllDto() {
+    return productService.findAllDto();
     }
 
     @GetMapping("/eliminar/{id}")  // Eliminar Boton

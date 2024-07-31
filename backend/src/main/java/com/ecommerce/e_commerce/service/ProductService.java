@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.ecommerce.e_commerce.model.Product;
 import com.ecommerce.e_commerce.Repository.ProductRepository;
+import com.ecommerce.e_commerce.dto.ProductDTO;
 
 @Service
 public class ProductService {
@@ -20,6 +21,10 @@ public class ProductService {
 
     public List<Product> getProducts(){ //obtener todos los productos
         return productRepository.findAll();
+    }
+
+    public interface ProductDtoService {
+    public List<ProductDTO> findAllDto();
     }
     //obtener por id
     public Optional<Product> getProduct(Long id){
@@ -37,4 +42,10 @@ public class ProductService {
     public List<Product> getProductsByName(String productName) {
         return productRepository.findByProductName(productName);
     }
+
+    public List<ProductDTO> findAllDto() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'findAllDto'");
+    }
 }
+
