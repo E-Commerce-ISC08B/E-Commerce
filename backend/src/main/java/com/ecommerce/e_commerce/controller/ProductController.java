@@ -60,6 +60,9 @@ public class ProductController {
     public ResponseEntity<Optional<Product>> updateProduct(@PathVariable Long id){
         return ResponseEntity.ok(productService.getProduct(id));
     }
-    
+    @GetMapping("/name/{productName}")
+    public List<Product> getProductsByName(@PathVariable String productName) {
+        return productService.getProductsByName(productName);
+    }
 
 }
