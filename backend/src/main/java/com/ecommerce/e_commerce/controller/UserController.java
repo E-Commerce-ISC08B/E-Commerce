@@ -66,6 +66,6 @@ public class UserController {
       if (id > 0) {
         userService.deleteUser(id);
       }
-      return "Usuario borrado con exito.";
+      return "redirect:/";
     }
 }
