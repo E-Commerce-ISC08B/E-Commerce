@@ -1,5 +1,6 @@
 package com.ecommerce.e_commerce.controller;
 
+import com.ecommerce.e_commerce.exception.ResourceNotFoundException;
 import com.ecommerce.e_commerce.model.Users;
 import com.ecommerce.e_commerce.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,7 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Users> getUserById(@PathVariable Long id) {
+    public ResponseEntity<Users> getUserById(@PathVariable Long id) throws ResourceNotFoundException {
         Users user = userService.getUserById(id);
         return ResponseEntity.ok(user);
     }
@@ -45,13 +46,13 @@ public class UserController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Users> updateUser(@PathVariable Long id, @Valid @RequestBody Users userDetails) {
+    public ResponseEntity<Users> updateUser(@PathVariable Long id, @Valid @RequestBody Users userDetails) throws ResourceNotFoundException {
         Users updatedUser = userService.updateUser(id, userDetails);
         return ResponseEntity.ok(updatedUser);
     }
 
     @GetMapping("/delete/{id}")
-    public String eliminar(@PathVariable Long id) {
+    public String eliminar(@PathVariable Long id) throws ResourceNotFoundException {
         userService.deleteUser(id);
         return "redirect:/";
     }
