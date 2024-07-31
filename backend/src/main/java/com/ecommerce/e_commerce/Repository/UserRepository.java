@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public interface UserRepository extends JpaRepository<Users, Long> {
 
-
-    @Query("SELECT * FROM customers u WHERE u.customerName = :'customerName'")
+    
+    @Query("SELECT u FROM Users u WHERE u.customerName = :customerName")
     List<Users> findByCustomerName(@Param("customerName") String customerName);
 }
