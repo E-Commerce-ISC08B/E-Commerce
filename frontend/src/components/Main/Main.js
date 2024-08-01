@@ -14,6 +14,7 @@ import { ProductImages } from "../ProductImages";
 import HoverRating from "../productStars/productStars";
 import ProductComponent from "../productTotal/productTotal";
 import { Route, Routes } from "react-router-dom";
+import Product from "../views/product";
 
 // Main components
 import Home from "../views";
@@ -40,6 +41,7 @@ function Main() {
     <Routes>
       <Route path="/" element={<Login />} />
       <Route path="/home" element={<Home prods={prods} />} />
+      <Route path="/product" element={<Home prods={prods} />} />
     </Routes>
   );
 }

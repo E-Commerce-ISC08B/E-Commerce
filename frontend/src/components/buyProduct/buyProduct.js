@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './buyProducts.css'; // Asumiendo que guardas el CSS en BuyProduct.css
 
 const BuyProduct = () => {
   const [address, setAddress] = useState('');
@@ -21,14 +22,14 @@ const BuyProduct = () => {
   };
 
   return (
-    <div style={{ border: '2px solid red', padding: '10px', width: '300px' }}>
+    <div className="buy-product-container">
       <h1>buyProduct</h1>
-      <div style={{ border: '1px solid black', padding: '10px' }}>
-        <h2>Dirección</h2>
-        <p>{address}</p>
-        <a href="/cambiar-direccion">Cambiar dirección de envío</a>
-        <button onClick={handlePayment} style={{ display: 'block', marginTop: '10px' }}>Pagar</button>
-        <label style={{ display: 'block', marginTop: '10px' }}>
+      <div className="address-container">
+        <h2 className="address-title">Dirección</h2>
+        <p className="address-text">{address}</p>
+        <a className="change-address-link" href="/cambiar-direccion">Cambiar dirección de envío</a>
+        <button className="payment-button" onClick={handlePayment}>Pagar</button>
+        <label className="gift-checkbox">
           <input 
             type="checkbox" 
             checked={isGift}
