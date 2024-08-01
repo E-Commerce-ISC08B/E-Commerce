@@ -1,0 +1,51 @@
+.direction-order {
+    border: 2px solid #6E6E6E; /* Gris tenue */
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+    margin: 20px;
+    background-color: #FFFFFF; /* Blanco */
+  }
+  
+  .cancel-button {
+    background-color: #BAFF39; /* Amarillo-verde */
+    color: #6E6E6E; /* Gris tenue */
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    float: left;
+    margin-bottom: 10px;
+    border-radius: 3px;
+  }
+  
+  .payment-methods div {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #6E6E6E; /* Gris tenue */
+    cursor: pointer;
+    background-color: #BAFF39; /* Amarillo-verde */
+    color: #6E6E6E; /* Gris tenue */
+    border-radius: 3px;
+    text-align: center;
+  }
+  
+  .payment-methods div:hover {
+    background-color: #6E6E6E; /* Gris tenue */
+    color: #FFFFFF; /* Blanco */
+  }
+  
+  .user-info input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #6E6E6E; /* Gris tenue */
+    border-radius: 3px;
+    background-color: #FFFFFF; /* Blanco */
+    color: #6E6E6E; /* Gris tenue */
+  }
+  
+  .user-info input::placeholder {
+    color: #6E6E6E; /* Gris tenue */
+  }
+  
