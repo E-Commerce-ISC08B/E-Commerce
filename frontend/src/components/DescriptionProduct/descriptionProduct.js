@@ -43,7 +43,7 @@ export default function DescriptionProduct({imageURL, name, description}) {
   );
 }
 
-DescriptionProduct.PropTypes = {
+DescriptionProduct.propTypes = {
   imageURL: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired

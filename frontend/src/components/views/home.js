@@ -1,9 +1,18 @@
 import React from "react";
 import DescriptionProduct from "../DescriptionProduct/descriptionProduct";
-import PropTypes from "prop-types";
 
-const home= (props) => {
+const Home = (prods) => {
     return (
-        <DescriptionProduct/>
+        <div>
+            { prods.map(({prod, index}) => {
+                <DescriptionProduct key={index} 
+                imageURL={prod.imageURL}
+                name={prod.name}
+                description={prod.description}
+                />
+            })}
+        </div>
     );
-}
+};
+
+export default Home;

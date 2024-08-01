@@ -11,6 +11,7 @@ CREATE Table `Categories` (
 CREATE Table `Products` (
   `productID` integer not null AUTO_INCREMENT,
   `productName` varchar (30),
+  `img` varchar (255),
   `productPrice` float,
   `productQTY` smallint (6),
   `description`  varchar (30),
