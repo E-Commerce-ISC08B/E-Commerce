@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './producTotal.css'; // Asumiendo que guardas el CSS en ProductComponent.css
+import './productTotal.css'; // Asumiendo que guardas el CSS en ProductComponent.css
 
 const ProductComponent = () => {
   const [quantity, setQuantity] = useState(1);
