@@ -1,0 +1,42 @@
+/* Description.css */
+
+.container {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+    background-color: #f1f1f1; /* Fondo gris claro */
+  }
+  
+  .imageContainer {
+    margin-bottom: 20px;
+  }
+  
+  .imageWrapper {
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
+  .image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    border: 2px solid #b3b3b3; /* Borde gris claro */
+  }
+  
+  .descriptionContainer {
+    text-align: center;
+  }
+  
+  .description {
+    font-size: 16px;
+    color: #4a4a4a; /* Gris oscuro para el texto */
+    margin: 10px 0;
+  }
+  
+  .description strong {
+    color: #9acd32; /* Amarillo verdoso para resaltar */
+  }
+  
