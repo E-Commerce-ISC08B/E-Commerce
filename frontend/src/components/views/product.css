@@ -85,3 +85,23 @@
     color: #6E6E6E; /* Gris tenue */
   }
   
+
+  /*Diseño de vista payment*/
+  .product-container {
+    display: flex;
+  }
+  
+  .product-container > div {
+    border: 1px solid 6E6E6E; /* Adding border to see the division as in your example */
+    box-sizing: border-box;
+  }
+  
+  .product-container > div:first-child {
+    flex: 1;
+    margin-right: 10px;
+  }
+  
+  .product-container > div:last-child {
+    flex: 1;
+  }
+  
