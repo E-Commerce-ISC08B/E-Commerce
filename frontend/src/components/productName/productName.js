@@ -11,3 +11,4 @@ const ProductName = ({ productName, productDescription, sellerUrl }) => {
 }
 
 export default ProductName;
+
