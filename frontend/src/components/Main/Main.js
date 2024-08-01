@@ -15,6 +15,7 @@ import HoverRating from "../productStars/productStars";
 import ProductComponent from "../productTotal/productTotal";
 import { Route, Routes } from "react-router-dom";
 import Product from "../views/product";
+import Payment from "../views/payment";
 
 // Main components
 import Home from "../views";
@@ -39,7 +40,7 @@ function Main() {
   ];
   return (
     <Routes>
-      <Route path="/" element={<Login />} />
+      <Route path="/" element={<Payment />} />
       <Route path="/home" element={<Home prods={prods} />} />
       <Route path="/product" element={<Home prods={prods} />} />
     </Routes>

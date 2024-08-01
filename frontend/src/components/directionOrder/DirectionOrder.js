@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './directionOrder.css'; 
+import './DirectionOrder.css'; 
 
 const DirectionOrder = () => {
   const [paymentMethod, setPaymentMethod] = useState('');
