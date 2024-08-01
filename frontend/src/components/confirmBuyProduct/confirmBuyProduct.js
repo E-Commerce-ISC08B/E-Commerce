@@ -1,4 +1,5 @@
 import React from 'react';
+import './confirmBuyProduct.css'; // Importa el archivo CSS
 
 // Componente de confirmación de compra
 const ConfirmBuyProduct = ({ productDetails }) => {
