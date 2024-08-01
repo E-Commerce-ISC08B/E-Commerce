@@ -1,7 +1,7 @@
 import React from 'react';
 import './productName.css'; // Asumiendo que guardas el CSS en ProductCard.css
 
-const ProductCard = ({ productName, productDescription, sellerUrl }) => {
+const ProductName = ({ productName, productDescription, sellerUrl }) => {
   return (
     <div className="product-card">
       <h2 className="product-title">{productName} - {productDescription}</h2>
@@ -10,5 +10,4 @@ const ProductCard = ({ productName, productDescription, sellerUrl }) => {
   );
 }
 
-export default ProductCard;
-
+export default ProductName;
