@@ -20,28 +20,28 @@ import Product from "../views/product";
 import Home from "../views";
 
 function Main() {
-  const prods = [
+  const products = [
     {
-      imageURL: 'https://empresas.blogthinkbig.com/wp-content/uploads/2019/11/Imagen3-245003649.jpg?fit=960%2C720',
-      name: 'Producto 1',
-      description: 'tilin'
+      imageURL: "https://via.placeholder.com/150",
+      name: "Producto 1",
+      description: "Descripción del Producto 1",
     },
     {
-      imageURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdI5h6LZxis-xvMA-mioIFBUdBqrofceIn1A&s',
-      name: 'Producto 2',
-      description: 'chupapi'
+      imageURL: "https://via.placeholder.com/150",
+      name: "Producto 2",
+      description: "Descripción del Producto 2",
     },
     {
-      imageURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqrIaOoNLKb_PGfc_nS4s3IVBC8x7x9nYOqQ&s',
-      name: 'Producto 3',
-      description: 'munianio'
+      imageURL: "https://via.placeholder.com/150",
+      name: "Producto 3",
+      description: "Descripción del Producto 3",
     },
   ];
   return (
     <Routes>
       <Route path="/" element={<Login />} />
-      <Route path="/home" element={<Home prods={prods} />} />
-      <Route path="/product" element={<Home prods={prods} />} />
+      <Route path="/home" element={<Home prods={products} />} />
+      <Route path="/product" element={<Product />} />
     </Routes>
   );
 }
