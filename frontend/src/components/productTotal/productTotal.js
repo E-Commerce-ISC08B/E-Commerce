@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './producTotal.css'; // Asumiendo que guardas el CSS en ProductComponent.css
 
 const ProductComponent = () => {
   const [quantity, setQuantity] = useState(1);
@@ -14,17 +15,18 @@ const ProductComponent = () => {
   };
 
   return (
-    <div style={{ border: '1px solid black', padding: '20px', width: '200px' }}>
-      <div>
+    <div className="product-container">
+      <div className="product-price">
         <span>$xxxx</span>
       </div>
-      <div>
+      <div className="product-availability">
         <span>Disponible</span>
       </div>
-      <div>
+      <div className="product-quantity">
         <label htmlFor="quantity">Cantidad: </label>
         <select
           id="quantity"
+          className="product-select"
           value={quantity}
           onChange={(e) => setQuantity(Number(e.target.value))}
         >
@@ -36,10 +38,10 @@ const ProductComponent = () => {
         </select>
       </div>
       <div>
-        <button onClick={handleAddToCart}>Añadir al carrito</button>
+        <button className="product-button" onClick={handleAddToCart}>Añadir al carrito</button>
       </div>
       <div>
-        <button onClick={handleBuyNow}>Comprar ahora</button>
+        <button className="product-button" onClick={handleBuyNow}>Comprar ahora</button>
       </div>
     </div>
   );

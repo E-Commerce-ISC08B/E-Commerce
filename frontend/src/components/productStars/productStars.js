@@ -2,6 +2,7 @@ import * as React from "react";
 import Rating from "@mui/material/Rating";
 import Box from "@mui/material/Box";
 import StarIcon from "@mui/icons-material/Star";
+import './productStars.css'; // Asumiendo que guardas el CSS en HoverRating.css
 
 const labels = {
   0.5: "Not recomended",
@@ -25,13 +26,7 @@ export default function HoverRating() {
   const [hover, setHover] = React.useState(-1);
 
   return (
-    <Box
-      sx={{
-        width: 200,
-        display: "flex",
-        alignItems: "center"
-      }}
-    >
+    <Box className="rating-box">
       <Rating
         name="hover-feedback"
         value={value}
@@ -46,7 +41,7 @@ export default function HoverRating() {
         emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
       />
       {value !== null && (
-        <Box sx={{ ml: 2 }}>{labels[hover !== -1 ? hover : value]}</Box>
+        <Box className="rating-label">{labels[hover !== -1 ? hover : value]}</Box>
       )}
     </Box>
   );
