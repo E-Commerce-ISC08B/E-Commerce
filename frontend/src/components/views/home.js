@@ -2,8 +2,6 @@ import React from "react";
 import DescriptionProduct from "../DescriptionProduct/descriptionProduct";
 
 const Home = ({ prods }) => {
-  debugger;
-  console.log(prods);
   return (
     <div>
       {prods.map((prod, index) => (
