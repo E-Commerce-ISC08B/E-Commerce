@@ -1,10 +1,10 @@
 import React from 'react';
-import NavBar from '../components/NavBar/NavBar';
-import ProductName from '../components/productName/productName';
-import DescriptionProduct from '../components/DescriptionProduct/descriptionProduct';
-import ProductTotal from '../components/productTotal/productTotal';
-import ProductImages from '../components/ProductImages/ProductImages';
-import ProductStars from '../components/productStars/productStars';
+import NavBar from '../NavBar/NavBar';
+import ProductName from '../productName/productName';
+import DescriptionProduct from '../DescriptionProduct/descriptionProduct';
+import ProductTotal from '../productTotal/productTotal';
+import ProductImages from '../ProductImages/ProductImages';
+import ProductStars from '../productStars/productStars';
 import './product.css';
 
 const Product = () => {
