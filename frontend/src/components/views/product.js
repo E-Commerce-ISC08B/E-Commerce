@@ -1,6 +1,6 @@
 import React from 'react';
 import NavBar from '../NavBar/NavBar';
-import ProductName from '../productName/productName';
+import ProductName from '../ProductName/productName';
 import DescriptionProduct from '../DescriptionProduct/descriptionProduct';
 import ProductTotal from '../productTotal/productTotal';
 import ProductImages from '../ProductImages/ProductImages';
