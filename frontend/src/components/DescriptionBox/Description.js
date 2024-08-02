@@ -1,45 +1,28 @@
-import React from 'react';
-import './descriptionbox.css'; // Importa el archivo CSS
+import * as React from "react";
+import PropTypes from "prop-types";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import Typography from "@mui/material/Typography";
 
-import CardItem from '../CardItem';
-import DescriptionProduct from '../DescriptionProduct/descriptionProduct';
-
-const Description = ({ product }) => {
-  // Verifica que product esté definido y tenga propiedades
-  if (!product) {
-    return <div>No se encontró información del producto.</div>;
-  }
-
+export default function DescriptionBox({ name, description }) {
   return (
-    <div className="container">
-      <div className="imageContainer">
-        <CardItem imageUrl={product.imageUrl} alt={product.productName} />
-      </div>
-      <div className="descriptionContainer">
-        <DescriptionProduct description={product.description} />
-      </div>
-    </div>
+    <Card sx={{ width: '100%', maxWidth: '100%' }}>
+      <CardContent>
+        <Typography variant="h6" component="div" gutterBottom>
+          Acerca del producto
+        </Typography>
+        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+          {name}
+        </Typography>
+        <Typography variant="body1" component="div">
+          {description}
+        </Typography>
+      </CardContent>
+    </Card>
   );
-};
+}
 
-// Estilos en línea para el componente
-const styles = {
-  container: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    padding: '20px',
-    border: '1px solid #ccc',
-    borderRadius: '5px',
-    maxWidth: '600px',
-    margin: '20px auto',
-  },
-  imageContainer: {
-    marginBottom: '20px',
-  },
-  descriptionContainer: {
-    textAlign: 'center',
-  },
+DescriptionBox.propTypes = {
+  name: PropTypes.string,
+  description: PropTypes.string,
 };
-
-export default Description;

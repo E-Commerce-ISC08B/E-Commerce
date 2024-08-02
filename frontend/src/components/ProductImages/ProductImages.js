@@ -14,7 +14,11 @@ const ProductImages = ({ images }) => {
             <img
               src={images[0]}
               alt="Producto principal"
+<<<<<<< Updated upstream
               style={{ width: '100%', height: 'auto' }}
+=======
+              style={{ width: '100%', height: 'auto', maxWidth: '400px' }} // Establecer ancho máximo
+>>>>>>> Stashed changes
             />
           </Paper>
         </Grid>
@@ -26,7 +30,11 @@ const ProductImages = ({ images }) => {
                   <img
                     src={image}
                     alt={`Producto ${index + 1}`}
+<<<<<<< Updated upstream
                     style={{ width: '100%', height: 'auto' }}
+=======
+                    style={{ width: '100%', height: 'auto', maxWidth: '150px' }} // Establecer ancho máximo
+>>>>>>> Stashed changes
                   />
                 </Paper>
               </Grid>
