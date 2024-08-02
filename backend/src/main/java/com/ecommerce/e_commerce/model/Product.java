@@ -17,11 +17,18 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long productID;
 
+    @Column
     private String productName;
+    
+    @Column
+    private String img;
 
+    @Column
     private float productPrice;
 
+    @Column
     private int productQTY;
 
+    @Column
     private String description;
 }

@@ -13,7 +13,11 @@ import org.springframework.web.bind.annotation.*;
 import jakarta.validation.Valid;
 import java.util.List;
 
+<<<<<<< Updated upstream
 @Controller
+=======
+@RestController
+>>>>>>> Stashed changes
 public class UserController {
 
     @Autowired

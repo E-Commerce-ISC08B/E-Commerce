@@ -19,8 +19,12 @@ import jakarta.validation.Valid;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
+<<<<<<< Updated upstream
+=======
+import org.springframework.web.bind.annotation.RestController;
+>>>>>>> Stashed changes
 
-@Controller
+@RestController
 public class ProductController {
     private final ProductService productService;
 
@@ -79,5 +83,14 @@ public class ProductController {
     public List<Product> getProductsByName(@PathVariable String productName) {
         return productService.getProductsByName(productName);
     }
+<<<<<<< Updated upstream
 //Deberia dejarme subir esto al repo
+=======
+    
+    @GetMapping("/product/{id}")
+    public Optional<Product> ggetProductById(@PathVariable Long id){
+        return productService.getProductById(id);
+    }
+
+>>>>>>> Stashed changes
 }
