@@ -1,50 +1,28 @@
-import React, { useState } from 'react';
-import './productTotal.css'; // Asumiendo que guardas el CSS en ProductComponent.css
+import React from 'react';
+import { Box, Button, TextField } from '@mui/material';
 
-const ProductComponent = () => {
-  const [quantity, setQuantity] = useState(1);
-
-  const handleAddToCart = () => {
-    // Lógica para añadir al carrito
-    console.log(`Añadir ${quantity} al carrito`);
-  };
-
-  const handleBuyNow = () => {
-    // Lógica para comprar ahora
-    console.log(`Comprar ${quantity} ahora`);
-  };
-
+const ProductTotal = ({ onAddToCart, onBuyNow }) => {
   return (
-    <div className="product-container">
-      <div className="product-price">
-        <span>$xxxx</span>
-      </div>
-      <div className="product-availability">
-        <span>Disponible</span>
-      </div>
-      <div className="product-quantity">
-        <label htmlFor="quantity">Cantidad: </label>
-        <select
-          id="quantity"
-          className="product-select"
-          value={quantity}
-          onChange={(e) => setQuantity(Number(e.target.value))}
-        >
-          {[1, 2, 3, 4, 5].map((num) => (
-            <option key={num} value={num}>
-              {num}
-            </option>
-          ))}
-        </select>
-      </div>
-      <div>
-        <button className="product-button" onClick={handleAddToCart}>Añadir al carrito</button>
-      </div>
-      <div>
-        <button className="product-button" onClick={handleBuyNow}>Comprar ahora</button>
-      </div>
-    </div>
+    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginY: 2 }}>
+      <TextField
+        label="Cantidad"
+        type="number"
+        InputLabelProps={{
+          shrink: true,
+        }}
+        defaultValue={1}
+        variant="outlined"
+        size="small"
+        sx={{ marginBottom: 2 }} // Espaciado entre el campo de texto y el botón
+      />
+      <Button variant="contained" color="primary" sx={{ marginBottom: 1 }} onClick={onAddToCart}>
+        Añadir al Carrito
+      </Button>
+      <Button variant="contained" color="secondary" onClick={onBuyNow}>
+        Comprar Ahora
+      </Button>
+    </Box>
   );
 };
 
-export default ProductComponent;
+export default ProductTotal;
