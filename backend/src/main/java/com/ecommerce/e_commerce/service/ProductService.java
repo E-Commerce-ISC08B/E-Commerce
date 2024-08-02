@@ -7,11 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ecommerce.e_commerce.model.Product;
-<<<<<<< Updated upstream
 import com.ecommerce.e_commerce.Repository.ProductRepository;
-=======
-import com.ecommerce.e_commerce.repository.ProductRepository;
->>>>>>> Stashed changes
 import com.ecommerce.e_commerce.dto.ProductDTO;
 
 @Service
@@ -25,13 +21,10 @@ public class ProductService {
         return productRepository.findAll();
     }
 
-<<<<<<< Updated upstream
-=======
     public Optional<Product> getProductById(Long id){
         return productRepository.findById(id);
     }
 
->>>>>>> Stashed changes
     public interface ProductDtoService {
     public List<ProductDTO> findAllDto();
     }
