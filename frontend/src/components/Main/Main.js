@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import NavBar from "../NavBar/NavBar";
+<<<<<<< Updated upstream
 import Home from "../views";
+=======
+import Home from "../views/home";
+>>>>>>> Stashed changes
 import Product from "../views/product";
 import ShoppingCart from "../views/cart";
 import API from "../API/API";
@@ -15,7 +19,12 @@ function Main() {
     const fetchProducts = async () => {
       try {
         const data = await API.getProducts(); // Llama a la API
+<<<<<<< Updated upstream
         setProducts(data); // Actualiza el estado con los productos
+=======
+        setProducts(data);
+        console.log(products); // Actualiza el estado con los productos
+>>>>>>> Stashed changes
       } catch (error) {
         console.error("Error fetching products:", error);
       } finally {
