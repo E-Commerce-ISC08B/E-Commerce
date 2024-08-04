@@ -2,7 +2,11 @@ package com.ecommerce.e_commerce.service;
 
 import com.ecommerce.e_commerce.exception.ResourceNotFoundException;
 import com.ecommerce.e_commerce.model.Users;
+<<<<<<< Updated upstream
 import com.ecommerce.e_commerce.Repository.UserRepository;
+=======
+import com.ecommerce.e_commerce.repository.UserRepository;
+>>>>>>> Stashed changes
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

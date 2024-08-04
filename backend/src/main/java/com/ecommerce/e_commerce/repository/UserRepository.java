@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 package com.ecommerce.e_commerce.Repository;
+=======
+package com.ecommerce.e_commerce.repository;
+>>>>>>> Stashed changes
 
 import com.ecommerce.e_commerce.model.Users;
 import org.springframework.data.jpa.repository.JpaRepository;

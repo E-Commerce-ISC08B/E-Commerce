@@ -7,7 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ecommerce.e_commerce.model.Product;
+<<<<<<< Updated upstream
 import com.ecommerce.e_commerce.Repository.ProductRepository;
+=======
+import com.ecommerce.e_commerce.repository.ProductRepository;
+>>>>>>> Stashed changes
 import com.ecommerce.e_commerce.dto.ProductDTO;
 
 @Service
