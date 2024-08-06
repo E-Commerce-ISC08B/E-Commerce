@@ -7,6 +7,20 @@ import Login from "../login/Login";
 import ShoppingCart from "../views/cart";
 import API from "../API/API";
 
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#cfbaac',
+      contrastText: '#0d0601', // Color del texto
+    },
+    secondary: {
+      main: '#76564f',
+    },
+  },
+});
+
 function Main() {
   const [products, setProducts] = useState([]); // Estado para almacenar los productos
   const [loading, setLoading] = useState(true); // Estado para manejar la carga
@@ -34,26 +48,29 @@ function Main() {
 
   return (
     <div>
-      <NavBar />
-      <Routes>
-      <Route 
-          path="/" 
-          element={<Home prods={products} setSelectedProductId={setSelectedProductId} />} 
-        />
-        <Route path="/cart" element={<ShoppingCart />} />
+
+      <ThemeProvider theme={theme}>
+        <NavBar />
+        <Routes>
         <Route 
-          path="/home" 
-          element={<Home prods={products} setSelectedProductId={setSelectedProductId} />} 
-        />
-        <Route 
-          path="/product/:productId" 
-          element={<Product productId={selectedProductId} />} 
-        />
-        <Route 
+            path="/" 
+            element={<Home prods={products} setSelectedProductId={setSelectedProductId} />} 
+          />
+          <Route path="/cart" element={<ShoppingCart />} />
+          <Route 
+            path="/home" 
+            element={<Home prods={products} setSelectedProductId={setSelectedProductId} />} 
+          />
+          <Route 
+            path="/product/:productId" 
+            element={<Product productId={selectedProductId} />} 
+          />
+          <Route 
           path="/login" 
           element={<Login />} 
-        />
-      </Routes>
+          />
+        </Routes>
+      </ThemeProvider>
     </div>
   );
 }

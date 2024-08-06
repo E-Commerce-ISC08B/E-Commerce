@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { AppBar, Toolbar, IconButton, Typography, InputBase, Box } from '@mui/material';
-import { Home, Search, Category, LocalOffer, ShoppingCart, AccountCircle } from '@mui/icons-material';
+import { AppBar, Toolbar, IconButton, InputBase, Box } from '@mui/material';
+import { Search, Category, LocalOffer, ShoppingCart, AccountCircle } from '@mui/icons-material';
 import { styled, alpha } from '@mui/material/styles';
+
+import Home from '../../assets/icons/neek.png';
 
 const SearchBar = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -51,7 +53,7 @@ const NavBar = () => {
     <AppBar position="static">
       <Toolbar>
         <IconButton edge="start" color="inherit" component={Link} to="/home">
-          <Home />
+          <img src={Home} alt='home' style={{ width: 44, height: 44 }} />
         </IconButton>
         <SearchBar>
           <SearchIconWrapper>
