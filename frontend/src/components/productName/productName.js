@@ -1,14 +1,20 @@
 import React from 'react';
-import './productName.css'; // Asumiendo que guardas el CSS en ProductCard.css
+import { Box, Button, Typography } from '@mui/material';
 
 const ProductName = ({ productName, productDescription, sellerUrl }) => {
   return (
-    <div className="product-card">
-      <h2 className="product-title">{productName} - {productDescription}</h2>
-      <button className="seller-button" onClick={() => window.location.href = sellerUrl}>Vendedor</button>
-    </div>
+    <Box sx={{ textAlign: 'center', marginBottom: 2 }}>
+      <Typography variant="h5" component="div" gutterBottom>
+        {productName} - {productDescription}
+      </Typography>
+      <Button 
+        variant="outlined" 
+        onClick={() => window.location.href = sellerUrl}
+      >
+        Vendedor
+      </Button>
+    </Box>
   );
-}
+};
 
 export default ProductName;
-

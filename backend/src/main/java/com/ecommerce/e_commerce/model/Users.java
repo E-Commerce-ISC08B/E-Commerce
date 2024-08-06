@@ -10,25 +10,19 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "Products")
-public class Product {
-    @Id
-    @Column(name = "productID")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long productID;
-
-    @Column
-    private String productName;
+@Table(name = "Customers")
+public class Users {
     
-    @Column
-    private String img;
+    @Id
+    @Column(name = "customerID")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long customerID;
+    private String billingAddress;
+    private String customerName;
+    private String email;
+    private String password;
+    private String defaultAddress;
+    private String country;
+    private String phone;
 
-    @Column
-    private float productPrice;
-
-    @Column
-    private int productQTY;
-
-    @Column
-    private String description;
 }

@@ -1,37 +1,104 @@
-import React from 'react';
-import NavBar from '../NavBar/NavBar';
-import ProductName from '../ProductName/productName';
-import DescriptionProduct from '../DescriptionProduct/descriptionProduct';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import ProductName from '../productName/productName';
+import DescriptionBox from '../DescriptionBox/Description';
 import ProductTotal from '../productTotal/productTotal';
 import ProductImages from '../ProductImages/ProductImages';
-import ProductStars from '../productStars/productStars';
-import './product.css';
+import { Box, Paper, Typography, Grid } from '@mui/material';
+import API from '../API/API';
+import { useCart } from '../contex/CartProvider';
+import { useNavigate } from 'react-router-dom';
 
 const Product = () => {
-  return (
-    <div className="product-page">
-      <NavBar />
-      <div className="product-container">
-        <div className="product-images">
-          <ProductImages />
+    const { productId } = useParams();
+    const [product, setProduct] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const { addToCart } = useCart();
+    const navigate = useNavigate();
+    const [quantity, setQuantity] = useState(1); // Agrega el estado para la cantidad
+
+    useEffect(() => {
+        const fetchProduct = async () => {
+            try {
+                const data = await API.getProductById(productId);
+                setProduct(data);
+            } catch (error) {
+                console.error("Error fetching product:", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        if (productId) {
+            fetchProduct();
+        }
+    }, [productId]);
+
+    if (loading) {
+        return <div>Loading...</div>;
+    }
+
+    if (!product) {
+        return <Typography variant="h6">Producto no encontrado</Typography>;
+    }
+
+    const images = product.img ? [product.img, product.img, product.img] : [];
+
+    const handleAddToCart = (quantity) => {
+        const productWithQuantity = {
+            ...product,
+            quantity,
+        };
+
+        console.log("Producto añadido al carrito con cantidad:", quantity);
+        addToCart(productWithQuantity);
+        console.log("Producto añadido al carrito");
+    };
+
+    const handleBuyNow = () => {
+        navigate('/cart');
+        console.log("Compra realizada");
+        handleAddToCart(quantity); // Asegúrate de pasar la cantida
+    };
+
+    return (
+        <div>
+            <Box sx={{ padding: 3 }}>
+                <Grid container spacing={3}>
+                    <Grid item xs={12} md={4}>
+                        <ProductImages images={images} />
+                    </Grid>
+                    <Grid item xs={12} md={8}>
+                        <Paper elevation={3} sx={{ padding: 3 }}>
+                            <Box sx={{ width: '100%', marginBottom: 2 }}>
+                                <ProductName
+                                    productName={product.productName}
+                                    productDescription={product.description}
+                                    sellerUrl={'https://bely-y-beto-wiki.fandom.com/es/wiki/Beto'}
+                                />
+                            </Box>
+                            <Box sx={{ display: 'flex', width: '100%' }}>
+                                <Box sx={{ width: '66.67%', paddingRight: 2 }}>
+                                    <DescriptionBox
+                                        name={product.productName}
+                                        description={product.description}
+                                    />
+                                </Box>
+                                <Box sx={{ width: '33.33%' }}>
+                                    <ProductTotal
+                                        onAddToCart={handleAddToCart}
+                                        onBuyNow={handleBuyNow}
+                                        setQuantity={setQuantity} // Agrega esto para actualizar la cantidad
+                                        stock={product.productQTY}
+                                    />
+                                </Box>
+                            </Box>
+                        </Paper>
+                    </Grid>
+                </Grid>
+            </Box>
         </div>
-        <div className="product-details">
-          <div className="product-name">
-            <ProductName />
-          </div>
-          <div className="product-description">
-            <DescriptionProduct />
-          </div>
-          <div className="product-total">
-            <ProductTotal />
-          </div>
-        </div>
-        <div className="product-stars">
-          <ProductStars />
-        </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default Product;
