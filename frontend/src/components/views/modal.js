@@ -1,7 +1,10 @@
 import React from 'react';
-import { Dialog, DialogTitle, DialogContent, DialogActions, Button, TextField, Grid, Typography, Radio, RadioGroup, FormControlLabel, FormControl, FormLabel } from '@mui/material';
+import { Dialog, DialogTitle, DialogContent, DialogActions, Button, TextField, Grid, Typography, Radio, RadioGroup, FormControlLabel, FormControl } from '@mui/material';
 
-const CheckoutModal = ({ open, handleClose }) => {
+const CheckoutModal = ({ open, handleClose, total }) => {
+  const shippingCost = (total * 0.05).toFixed(2); // 5% del total de productos
+  const grandTotal = (parseFloat(total) + parseFloat(shippingCost)).toFixed(2); // Suma del total y el costo de envío
+
   return (
     <Dialog open={open} onClose={handleClose} maxWidth="md" fullWidth>
       <DialogTitle>Checkout</DialogTitle>
@@ -32,9 +35,9 @@ const CheckoutModal = ({ open, handleClose }) => {
             <TextField label="Dirección" fullWidth margin="normal" />
 
             <Typography variant="h6" style={{ marginTop: 20 }}>Resumen del pedido</Typography>
-            <Typography>Producto: $$</Typography>
-            <Typography>Envío: $$</Typography>
-            <Typography>Total: $$</Typography>
+            <Typography>Producto: ${total}</Typography>
+            <Typography>Envío: ${shippingCost}</Typography>
+            <Typography>Total: ${grandTotal}</Typography>
           </Grid>
         </Grid>
       </DialogContent>

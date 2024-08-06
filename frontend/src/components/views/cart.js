@@ -4,7 +4,7 @@ import CheckoutModal from './modal'; // Asegúrate de ajustar la ruta según sea
 import { useCart } from '../contex/CartProvider';
 
 const ShoppingCart = () => {
-    const { cart } = useCart();
+    const { cart, removeFromCart } = useCart(); // Asegúrate de que removeFromCart esté disponible en tu contexto
     const { items } = cart;
     const [open, setOpen] = useState(false);
 
@@ -30,6 +30,8 @@ const ShoppingCart = () => {
         );
     }
 
+    const totalAmount = calculateTotal(); // Calcular el total una vez
+
     return (
         <Box sx={{ padding: 3, display: 'flex' }}>
             <Box sx={{ flex: 1 }}>
@@ -46,6 +48,7 @@ const ShoppingCart = () => {
                                 <TableCell>Cantidad</TableCell>
                                 <TableCell>Precio</TableCell>
                                 <TableCell>Total</TableCell>
+                                <TableCell>Eliminar</TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
@@ -61,6 +64,15 @@ const ShoppingCart = () => {
                                     <TableCell>
                                         ${((item.productPrice ? item.productPrice : 0) * (item.quantity ? item.quantity : 1)).toFixed(2)}
                                     </TableCell>
+                                    <TableCell>
+                                        <Button
+                                            variant="outlined"
+                                            color="secondary"
+                                            onClick={() => removeFromCart(item.productID)} // Llama a la función para eliminar el producto
+                                        >
+                                            Eliminar
+                                        </Button>
+                                    </TableCell>
                                 </TableRow>
                             ))}
                             <TableRow>
@@ -68,7 +80,7 @@ const ShoppingCart = () => {
                                     <Typography variant="h6">Total:</Typography>
                                 </TableCell>
                                 <TableCell>
-                                    <Typography variant="h6">${calculateTotal()}</Typography>
+                                    <Typography variant="h6">${totalAmount}</Typography>
                                 </TableCell>
                             </TableRow>
                         </TableBody>
@@ -95,7 +107,7 @@ const ShoppingCart = () => {
                 </Button>
             </Box>
 
-            <CheckoutModal open={open} handleClose={handleClose} />
+            <CheckoutModal open={open} handleClose={handleClose} total={totalAmount} /> {/* Pasa el total aquí */}
         </Box>
     );
 };
