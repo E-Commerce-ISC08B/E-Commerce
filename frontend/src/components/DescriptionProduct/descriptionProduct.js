@@ -22,6 +22,7 @@ export default function DescriptionProduct({ imageURL, name, description }) {
 }
 
 DescriptionProduct.propTypes = {
-  name: PropTypes.string,
-  description: PropTypes.string,
+  imageURL: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
 };
