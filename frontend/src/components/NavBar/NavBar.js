@@ -70,7 +70,7 @@ const NavBar = () => {
           <IconButton color="inherit" component={Link} to="/offers">
             <LocalOffer />
           </IconButton>
-          <IconButton color="inherit" component={Link} to="/login">
+          <IconButton color="inherit" component={Link} to="/Login">
             <AccountCircle />
           </IconButton>
           <IconButton color="inherit" component={Link} to="/cart">

@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import NavBar from "../NavBar/NavBar";
 import Home from "../views";
 import Product from "../views/product";
+import Login from "../login/Login";
 import ShoppingCart from "../views/cart";
 import API from "../API/API";
 
@@ -47,6 +48,10 @@ function Main() {
         <Route 
           path="/product/:productId" 
           element={<Product productId={selectedProductId} />} 
+        />
+        <Route 
+          path="/login" 
+          element={<Login />} 
         />
       </Routes>
     </div>
