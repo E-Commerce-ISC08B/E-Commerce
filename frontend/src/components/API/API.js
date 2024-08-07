@@ -1,4 +1,4 @@
-const API_URL = 'http://24.199.76.205:8080';
+const API_URL = 'http://137.184.10.186:8080';
 const getProducts = async () => {
     const token = localStorage.getItem('token');
     const response = await fetch(`${API_URL}/allproducts`, {

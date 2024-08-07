@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.812s</div>
+<div class="counter">1.660s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,7 +79,7 @@
 </thead>
 <tr>
 <td class="success">contextLoads()</td>
-<td class="success">0.812s</td>
+<td class="success">1.660s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -87,8 +87,8 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>02:59:52.066 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.ecommerce.e_commerce.BackendApplicationTests]: BackendApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-02:59:52.389 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.ecommerce.e_commerce.ECommerceApplication for test class com.ecommerce.e_commerce.BackendApplicationTests
+<pre>04:02:43.088 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.ecommerce.e_commerce.BackendApplicationTests]: BackendApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+04:02:43.516 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.ecommerce.e_commerce.ECommerceApplication for test class com.ecommerce.e_commerce.BackendApplicationTests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -99,16 +99,16 @@
 
  :: Spring Boot ::                (v3.3.1)
 
-2024-08-07T02:59:53.311-06:00  INFO 17724 --- [backend] [    Test worker] c.e.e_commerce.BackendApplicationTests   : Starting BackendApplicationTests using Java 17.0.10 with PID 17724 (started by hec_r in C:\Users\hec_r\Downloads\BetoJoto\E-Commerce\backend)
-2024-08-07T02:59:53.314-06:00  INFO 17724 --- [backend] [    Test worker] c.e.e_commerce.BackendApplicationTests   : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2024-08-07T02:59:54.720-06:00  INFO 17724 --- [backend] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-08-07T02:59:54.794-06:00  INFO 17724 --- [backend] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 60 ms. Found 2 JPA repository interfaces.
-2024-08-07T02:59:56.193-06:00  INFO 17724 --- [backend] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-08-07T02:59:56.333-06:00  INFO 17724 --- [backend] [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
-2024-08-07T02:59:56.415-06:00  INFO 17724 --- [backend] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-08-07T02:59:57.086-06:00  INFO 17724 --- [backend] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-08-07T02:59:57.167-06:00  INFO 17724 --- [backend] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-08-07T03:00:00.739-06:00  WARN 17724 --- [backend] [    Test worker] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
+2024-08-07T04:02:45.506-06:00  INFO 6600 --- [backend] [    Test worker] c.e.e_commerce.BackendApplicationTests   : Starting BackendApplicationTests using Java 17.0.11 with PID 6600 (started by Alberto Flores in C:\Users\Alberto Flores\Desktop\E-Commerce\backend)
+2024-08-07T04:02:45.511-06:00  INFO 6600 --- [backend] [    Test worker] c.e.e_commerce.BackendApplicationTests   : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2024-08-07T04:02:48.783-06:00  INFO 6600 --- [backend] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-07T04:02:49.007-06:00  INFO 6600 --- [backend] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 189 ms. Found 2 JPA repository interfaces.
+2024-08-07T04:02:52.899-06:00  INFO 6600 --- [backend] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-07T04:02:53.177-06:00  INFO 6600 --- [backend] [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-07T04:02:53.369-06:00  INFO 6600 --- [backend] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-07T04:02:54.624-06:00  INFO 6600 --- [backend] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-07T04:02:54.726-06:00  INFO 6600 --- [backend] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-07T04:02:58.272-06:00  WARN 6600 --- [backend] [    Test worker] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
 
 java.lang.NullPointerException: Cannot invoke &quot;org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(java.sql.SQLException, String)&quot; because the return value of &quot;org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.sqlExceptionHelper()&quot; is null
 	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:116) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
@@ -240,12 +240,12 @@ java.lang.NullPointerException: Cannot invoke &quot;org.hibernate.engine.jdbc.sp
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:na]
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:na]
 
-2024-08-07T03:00:00.796-06:00  WARN 17724 --- [backend] [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-08-07T03:00:02.397-06:00  INFO 17724 --- [backend] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-08-07T03:00:02.403-06:00  INFO 17724 --- [backend] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-08-07T03:00:02.995-06:00  INFO 17724 --- [backend] [    Test worker] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-08-07T03:00:04.645-06:00  WARN 17724 --- [backend] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-08-07T03:00:05.667-06:00  INFO 17724 --- [backend] [    Test worker] c.e.e_commerce.BackendApplicationTests   : Started BackendApplicationTests in 12.802 seconds (process running for 15.276)
+2024-08-07T04:02:58.372-06:00  WARN 6600 --- [backend] [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-07T04:03:00.983-06:00  INFO 6600 --- [backend] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-07T04:03:00.999-06:00  INFO 6600 --- [backend] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-07T04:03:02.555-06:00  INFO 6600 --- [backend] [    Test worker] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-08-07T04:03:05.578-06:00  WARN 6600 --- [backend] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-07T04:03:08.641-06:00  INFO 6600 --- [backend] [    Test worker] c.e.e_commerce.BackendApplicationTests   : Started BackendApplicationTests in 24.417 seconds (process running for 29.769)
 </pre>
 </span>
 </div>
@@ -257,7 +257,7 @@ java.lang.NullPointerException: Cannot invoke &quot;org.hibernate.engine.jdbc.sp
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.7</a> at 7 ago. 2024 03:00:06</p>
+<a href="http://www.gradle.org">Gradle 8.7</a> at 7 ago. 2024 04:03:10</p>
 </div>
 </div>
 </body>

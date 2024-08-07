@@ -24,7 +24,7 @@ export default function Login() {
     const password = data.get("password");
 
     try {
-      const response = await fetch("http://24.199.76.205:8080/login", {
+      const response = await fetch("http://137.184.10.186:8080/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

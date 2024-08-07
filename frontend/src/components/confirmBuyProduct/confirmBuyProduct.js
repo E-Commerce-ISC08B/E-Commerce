@@ -9,7 +9,7 @@ const [productDetails , setProductDetails] = useState([]);
 // Realizar una solicitud GET
 
 useEffect(()=>{
-  fetch('http://24.199.76.205:8080/allproducts')
+  fetch('http://137.184.10.186:8080/allproducts')
   .then(response => response.json())
   .then(data => setProductDetails(data))
   .catch(error => console.error('Error:', error));
