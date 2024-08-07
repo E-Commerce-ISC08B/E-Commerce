@@ -74,11 +74,11 @@ FLUSH PRIVILEGES;
     CONSTRAINT OrdDet_prod FOREIGN KEY (productID) REFERENCES Products (productID) ON DELETE CASCADE ON UPDATE CASCADE
     );
 
-    INSERT INTO `Products` (`productID`, `productName`, `img`, `productPrice`, `productQTY`, `description`) VALUES
-    (1, 'Laptop', 'https://th.bing.com/th?id=OIP.wlrGjafN3dckarQucKgaywHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2', 799.99, 25, 'Laptop con 16GB RAM'),
-    (2, 'Smartphone', 'https://th.bing.com/th?id=OIP.4BL8Obiwh6W1MiWIQvxORgHaHm&w=246&h=253&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2', 599.99, 50, 'Smartphone con 128GB de almace'),
-    (3, 'Sueter de Algodon', 'https://www.bordadospanama.com/wp-content/uploads/2021/10/sueter-manga-larga-con-cinta-reflectiva-gris.jpg', 0, 1, 'Sueter 100% de algodon para ho'),
-    (5, 'Gorro', 'https://img.sombreroshop.es/Gorro-de-Algod-n-Max-by-Stetson-gris-oscuro.55229_1rf23.jpg', 0, 2, 'Gorro de algodon');
+   INSERT INTO `products` (`productID`, `productName`, `img`, `productPrice`, `productQTY`, `description`) VALUES
+(6, 'Kit 5 pzs Bebé Salir del Hospi', 'https://neekcotton.com/cdn/shop/products/3_NOVIEMBRE_kits_7_e8a53d39-a84d-4699-89c9-f61ce6ac566f_720x715.jpg?v=1651682238', 399, 20, 'Kit de 5pz , 100% Algodón , Ma'),
+(7, 'Set 3 Mamelucos Bebe 100% Algo', 'https://neekcotton.com/cdn/shop/products/SETUNISEX_720x500.png?v=1653671980', 469, 20, 'SET 3 Mamelucos 100% Algodón P'),
+(8, 'Kit 4 pzs Casita Bebé Salir De', 'https://neekcotton.com/cdn/shop/products/Casita_Celeste_6f2b95b2-c666-4a8f-8df7-543a3ba62945_720x715.jpg?v=1626298741', 399, 20, 'Kit de 4pz , 100% algodón , Ma');
+
 
 
     INSERT INTO `Customers` (`customerID`, `customerName`, `email`, `password`, `billingAddress`, `defaultAddress`, `country`, `phone`) VALUES (NULL, 'Alberto Flores', 'jalberto.flores.m08@gmail.com', 'albertofm8', 'Mastercard', 'Amanecer #836, Vistas del Sol', 'Aguascalientes, Mexico', '4491298419');
