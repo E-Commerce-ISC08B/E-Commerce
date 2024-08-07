@@ -1,5 +1,5 @@
-FROM openjdk:22-jdk-slim
-VOLUME /tmp
+FROM openjdk:17-jdk-slim
+#VOLUME /tmp
 EXPOSE 8080
 
 ARG JAR_FILE=build/libs/*.jar
