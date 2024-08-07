@@ -1,10 +1,15 @@
 package com.ecommerce.e_commerce.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 import com.ecommerce.e_commerce.model.Product;
+import org.springframework.stereotype.Repository;
 
-public interface ProductRepository extends JpaRepository<Product, Long>{
+import java.util.List;
+@Repository
+public interface ProductRepository extends JpaRepository<Product, Long> {
 
-    
+    @Query("SELECT p FROM Product p WHERE p.productName = :productName")
+    List<Product> findByProductName(String productName);
 } 

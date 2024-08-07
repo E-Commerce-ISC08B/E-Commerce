@@ -1,0 +1,30 @@
+.product-card {
+    border: 2px solid #6E6E6E; /* Gris tenue */
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+    margin: 20px;
+    background-color: #FFFFFF; /* Blanco */
+  }
+  
+  .product-title {
+    margin-bottom: 10px;
+    color: #6E6E6E; /* Gris tenue */
+  }
+  
+  .seller-button {
+    background-color: #BAFF39; /* Amarillo-verde */
+    color: #6E6E6E; /* Gris tenue */
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .seller-button:hover {
+    background-color: #6E6E6E; /* Gris tenue */
+    color: #FFFFFF; /* Blanco */
+  }
+  

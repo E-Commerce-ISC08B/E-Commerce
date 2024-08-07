@@ -1,0 +1,36 @@
+/* confirmBuyProduct.css */
+
+.container {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+    background-color: #f7f7f7; /* Fondo gris claro */
+  }
+  
+  .header {
+    font-size: 24px;
+    color: #2c2c2c; /* Gris oscuro */
+  }
+  
+  .productDetails {
+    margin-top: 20px;
+    text-align: left;
+  }
+  
+  .productDetails p {
+    margin: 10px 0;
+    color: #4a4a4a; /* Gris medio */
+  }
+  
+  .productDetails p strong {
+    color: #2c2c2c; /* Gris oscuro */
+  }
+  
+  .productDetails p strong,
+  .header {
+    color: #5aab61; /* Amarillo verdoso */
+  }
+  

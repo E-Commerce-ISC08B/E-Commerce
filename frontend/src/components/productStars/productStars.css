@@ -1,0 +1,12 @@
+.rating-box {
+    width: 200px;
+    display: flex;
+    align-items: center;
+    margin: 20px; /* Añadido para mantener un espacio consistente */
+  }
+  
+  .rating-label {
+    margin-left: 20px;
+    color: #6E6E6E; /* Gris tenue */
+  }
+  
