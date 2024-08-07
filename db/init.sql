@@ -74,7 +74,7 @@ FLUSH PRIVILEGES;
     CONSTRAINT OrdDet_prod FOREIGN KEY (productID) REFERENCES Products (productID) ON DELETE CASCADE ON UPDATE CASCADE
     );
 
-   INSERT INTO `products` (`productID`, `productName`, `img`, `productPrice`, `productQTY`, `description`) VALUES
+   INSERT INTO `Products` (`productID`, `productName`, `img`, `productPrice`, `productQTY`, `description`) VALUES
 (6, 'Kit 5 pzs Bebé Salir del Hospi', 'https://neekcotton.com/cdn/shop/products/3_NOVIEMBRE_kits_7_e8a53d39-a84d-4699-89c9-f61ce6ac566f_720x715.jpg?v=1651682238', 399, 20, 'Kit de 5pz , 100% Algodón , Ma'),
 (7, 'Set 3 Mamelucos Bebe 100% Algo', 'https://neekcotton.com/cdn/shop/products/SETUNISEX_720x500.png?v=1653671980', 469, 20, 'SET 3 Mamelucos 100% Algodón P'),
 (8, 'Kit 4 pzs Casita Bebé Salir De', 'https://neekcotton.com/cdn/shop/products/Casita_Celeste_6f2b95b2-c666-4a8f-8df7-543a3ba62945_720x715.jpg?v=1626298741', 399, 20, 'Kit de 4pz , 100% algodón , Ma');
